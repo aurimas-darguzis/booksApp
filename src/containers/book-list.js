@@ -30,7 +30,9 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectBook: selectBook }, dispatch)
+  // Whenever selectBook is called, the result should be passed
+  // to all of our reducers
+  return bindActionCreators({ selectBook: selectBook }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
